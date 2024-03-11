@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+.appointments {    
+  text-align: center;   
+}
+
+.appointment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointment-box {
+  border: 1px solid #ccc;
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  min-width: 50%;
+  width: fit-content;
+  background-color: #a1ccb2; /* Change the background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  font-size: 18px; /* Increase the font size */
+}
+
+.appointment-box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view-prescription-button{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+.checkbox {
+  width: 2rem; 
+  height: 2rem;   
+  border: 2px solid #666; 
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
