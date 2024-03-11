@@ -154,7 +154,7 @@ export const sendEntry = async(req,res)=>{
             secure: false, // true for 465, false for other ports
             auth: {
               user: process.env.SMTP_MAIL,
-              pass: process.env.SMTP_PASS, // generated ethereal password
+              pass: process.env.SMTP_PASS, 
             },
           });
 
