@@ -6,7 +6,7 @@ Create, Read, Update, Delete, Send !!
 In this project, I have developed CRUDS operations handling Web application
 
 ## Key Features
-
+![WIN_20230603_12_22_24_Pro](https://github.com/Sumitkb21/CRUDS/assets/101947627/3e73d262-b30b-400c-ba61-d4ade9348534)
 
 ### Add Button:
 - By this you will navigate to a /addentry Page , where you can add entries by submiting a form.
