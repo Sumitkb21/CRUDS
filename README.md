@@ -21,8 +21,11 @@ In this project, I have developed CRUDS operations handling Web application
   ![image](https://github.com/Sumitkb21/Health_Center/assets/101947627/9cc0cad2-2c19-4f1d-92ea-a8b0a509575f)
 ### Send:
 - There is check-box avaible with each entry.
+ ![image](https://github.com/Sumitkb21/Health_Center/assets/101947627/b307533d-61cf-4004-997e-b365e34909ec)
+
 - You can marked as checked the entires , and then click Send button, the all marked entries will send to the desired email address (which is present at backend)
--   
+![image](https://github.com/Sumitkb21/Health_Center/assets/101947627/47412b1f-1a60-42ce-ba31-ef581277274e)
+![image](https://github.com/Sumitkb21/Health_Center/assets/101947627/bd56ef8a-5522-4fde-83dc-24d72a124ccd)
 
 ## Installation
 
