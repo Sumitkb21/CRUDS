@@ -66,11 +66,11 @@ const [userid,setUserid] = useState(props.id);
         });
          props.setRows(response.data.entries);
          props.setShowUpdateForm(prevState => ({ ...prevState, [props.id]: false }))
-        //  setDone(true);
+        
        }
         catch (error:any) {
            toast.error("can't update",{duration:5000});
-          //  setIsAuthenticatedReception(false);
+          
         }
      
 };

@@ -135,7 +135,7 @@ export const sendEntry = async(req,res)=>{
         if(!entries.length){
             return res.status(401).json({
                 success:false,
-                message: "Please mark check for some entries",
+                message: "Please mark some entries for send",
             })
         }
 

@@ -25,7 +25,6 @@ interface Entry {
 export default function Home(){
 
   const [rows,setRows]=useState<Entry[]>([]);
-  // const [idd , setIdd]  = useState<AxiosRequestConfig<string>>(" "); 
   const [done , setDone] = useState(false);
   const [checked,setChecked] = useState<Entry[]>([]);// all enteries which are checked 
   const [loader,setLoader] = useState(false);
@@ -48,17 +47,13 @@ export default function Home(){
   const renderRowsAndUpdateChecked = () => {
     const updatedChecked: Entry[] = [];
     
-    // Iterate through each row
     rows.forEach(entry => {
-      // Check if the entry's id exists in checkedEntries and is set to true
       if (checkedEntries[entry.id]) {
         updatedChecked.push(entry); // Add the entry to the updatedChecked array
       }
     });
 
-    console.log("updatechecked", updatedChecked);
-    // Update the checked state with the updatedChecked array
-    
+    console.log("updatechecked", updatedChecked);    
     setChecked(prevChecked => updatedChecked);
 
     
@@ -66,27 +61,16 @@ export default function Home(){
  
   useEffect(() => {
     renderRowsAndUpdateChecked();
-    // console.log("checked",checked);
 
   }, [rows,checkedEntries]);
   
   console.log("checked",checked);
-
-
-
-
-  // const [idd, setIdd] = useState<string>();
-
 
   const deleteHandler = async(idToDelete: string) =>{
    
     
     try {
      const {data} = await axios.post("http://localhost:5000/api/v1/task/deleteEntry",{idd:idToDelete});
-    
-    // return <Navigate to={"/"}/>;
-
-      // console.log(response.headers);
 
      
 
@@ -101,13 +85,13 @@ export default function Home(){
    }
     catch (error:any) {
        toast.error("can't delete",{duration:5000});
-      //  setIsAuthenticatedReception(false);
+ 
     }
  
 };
 
 
-//for update part//
+
 
 
 
@@ -119,14 +103,10 @@ export default function Home(){
       withCredentials:true,
     })
     .then(res=>{
-      // setUser(res.data.user);
+ 
       console.log(res.data.entries);
      
       setRows(res.data.entries);
-    // console.log(user)
-    // setIsAuthenticatedReception(true);
-    // setIsAuthenticated(false);
-    // setLoading(false);
     
   })
   .catch((error)=>{
@@ -147,39 +127,25 @@ const sendEntries = async () => {
     toast.success(response.data.message, { duration: 5000 });
     setLoader(false);
 
-    // const res = await axios.get("http://localhost:5000/api/v1/task/getAllEntry", {
-    //   withCredentials: true,
-    // });
-    // setRows(res.data.entries);
-
+   
     setCheckedEntries({});
     window.location.reload();
     setDone(true);
   } catch (error:any) {
-    // Handle error
     setLoader(false);
     console.error("Error sending entries via email:", error);
     toast.error(error.response.data.message, { duration: 5000 });
   }
 };
 
-
-
-
-
-// if(done){
-//   console.log("ha ah ayaa hai ");
-//   router.replace("/");
-//   setDone(false);
-// }
   
   return (
     <>
     
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <button
-        className="view-prescription-button"
-        id="view-prescription"
+        className="view-task-button"
+        id="view-task"
         disabled={loader}
         onClick={sendEntries}
         style={{
@@ -189,8 +155,8 @@ const sendEntries = async () => {
         }}  
         >Send</button>
 
-      <button className="view-prescription-button"
-      id="view-prescription" ><Link href="/addentry"> Add </Link></button>
+      <button className="view-task-button"
+      id="view-task" ><Link href="/addentry"> Add </Link></button>
       
       <br /><hr />
       <h1 style={{ fontSize: '2rem' }}>All Entries </h1>
@@ -206,8 +172,8 @@ const sendEntries = async () => {
               <strong>hobbies:</strong> {entry.hobbies},&nbsp;&nbsp;
             </span>&nbsp;&nbsp;&nbsp;
             <button
-                className="view-prescription-button"
-                id="view-prescription"  
+                className="view-task-button"
+                id="view-task"  
                 
                 onClick={() => setShowUpdateForm(prevState => ({ ...prevState, [entry.id]: true }))}
             >
@@ -215,13 +181,12 @@ const sendEntries = async () => {
                 Update 
             </button>
             <button
-                className="view-prescription-button"
-                id="view-prescription"  
+                className="view-task-button"
+                id="view-task"  
                 
                 onClick={() => {
                   
-                  // setIdd(entry.id);
-                  // console.log(entry.id);
+                
                   deleteHandler(entry.id);
                 }}
                 >
@@ -231,7 +196,6 @@ const sendEntries = async () => {
             </button>
             <input type="checkbox" 
             className="checkbox"
-            // checked = {checkedEntries[entry.id]}
             onChange={() => handleCheckboxChange(entry.id)}
 
             />
