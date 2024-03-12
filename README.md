@@ -3,7 +3,7 @@ Create, Read, Update, Delete, Send !!
 
 ## Project Overview
 
-In this project, I have developed CRUDS operations handling Web application
+In this project, I have developed CRUDS operations handling Web application based on Next.js, MongoDB, Express.js, Node.js 
 
 ## Key Features
 ### Read:
